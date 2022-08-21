@@ -30,6 +30,5 @@ for e in edge_data:
     net.add_edge(src, dst, value=w)
 
 
-
+net.show_buttons(filter_=True)
 net.show('testentgraph.html')
-net.show_buttons(filter_=['physics', 'nodes', 'edges'])
