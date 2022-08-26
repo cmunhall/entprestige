@@ -1,8 +1,11 @@
-from copyreg import constructor
 from pyvis.network import Network
 net = Network(height='90%', width='90%')
 import pandas as pd
 import networkx as nx
+import streamlit as st
+import streamlit.components.v1 as components
+
+st.title("Network Visualization of Top 10 ENT Programs")
 
 data = pd.read_csv('~/Desktop/prestigedata8.26.csv')
 
