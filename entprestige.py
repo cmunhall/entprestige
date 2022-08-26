@@ -1,10 +1,10 @@
+from copyreg import constructor
 from pyvis.network import Network
-from pyvis.physics import Physics
-net = Network(height='750px', width='80%')
+net = Network(height='90%', width='90%')
 import pandas as pd
+import networkx as nx
 
-data = pd.read_csv('~/Desktop/prestigedata.csv')
-
+data = pd.read_csv('~/Desktop/prestigedata8.26.csv')
 
 sources = data['source']
 targets = data['target']
@@ -16,19 +16,12 @@ edge_data = zip(sources, targets, weights)
 
 for e in edge_data:
     src = e[0]
-    print(type(src))
-    dst = e [1]
+    dst = e[1] 
     w = e[2]
-    asize = 0
-    for i in range(int(len(label))):
-        if src in label[i] :
-            asize = size[i]
 
-
-    net.add_node(src, src, title=src, value='audience.size')
+    net.add_node(src, src, title=src)
     net.add_node(dst, dst, title=dst)
     net.add_edge(src, dst, value=w)
-
 
 net.show_buttons(filter_=True)
 net.show('testentgraph.html')
